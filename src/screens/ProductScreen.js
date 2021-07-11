@@ -6,6 +6,7 @@ import Rating from "../components/Rating"
 import { listProductDetails } from "./../actions/productActions"
 import Loader from "../components/Loader"
 import Message from '../components/Message'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 const ProductScreen = () => {
     const { id } = useParams();
@@ -28,8 +29,10 @@ const ProductScreen = () => {
 
     return (
         <div>
-            <Link className="btn btn- my-3" to="/">
-                Go Back
+            <Link to="/">
+                <Button className="btn my-3" style={{ backgroundColor: 'red' }}>
+                    <ArrowBackIcon /> Go Back
+                </Button>
             </Link>
             {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> :
                 product && <Row>
