@@ -32,7 +32,7 @@ const ProductScreen = () => {
                 Go Back
             </Link>
             {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> :
-                <Row>
+                product && <Row>
                     <Col md={6}>
                         <Image src={product.image} alt={product.name} fluid />
                     </Col>
@@ -85,8 +85,8 @@ const ProductScreen = () => {
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>
-                </Row>
-            }
+                </Row>}
+
         </div>
     )
 }
